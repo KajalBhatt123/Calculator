@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <h1 class="center head1">CALCULATOR</h1>
+    <div class="border display">
+        <div class="answer deco"><input type="text" class="answer deco" name="display" id="display"></div>
+        <div class="flex2">
+            <div class="numbers deco1">
+                <div class="outer">
+                    <button class="d1" onclick="display.value=''">C</button>
+                    <button class="d1" onclick="display.value+='('">(</button>
+                    <button class="d1" onclick="display.value+=')'">)</button>
+                </div>
+                <div class="outer">
+                    <button class="d1" onclick='func1(display.value,"%")'>%</button>
+                    <button class="d1" onclick='func(display.value,1)'> x²</button>
+                    <button class="d1" onclick='func(display.value,2)'>√</button>
+                </div>
+                <div class="outer">
+                    <button class="d1" onclick="display.value+='7'">7</button>
+                    <button class="d1" onclick="display.value+='8'">8</button>
+                    <button class="d1" onclick="display.value+='9'">9</button>
+                </div>
+                <div class="outer">
+                    <button class="d1" onclick="display.value+='4'">4</button>
+                    <button class="d1" onclick="display.value+='5'">5</button>
+                    <button class="d1" onclick="display.value+='6'">6</button>
+                </div>
+                <div class="outer">
+                    <button class="d1" onclick="display.value+='1'">1</button>
+                    <button class="d1" onclick="display.value+='2'">2</button>
+                    <button class="d1" onclick="display.value+='3'">3</button>
+                </div>
+                <div class="outer">
+                    <button class="d1" onclick="display.value+='00'">00</button>
+                    <button class="d1" onclick="display.value+='0'">0</button>
+                    <button class="d1" onclick="display.value+='.'">.</button>
+                </div>
+                
+            </div>
+            <div class="operators deco1">
+                <button class="d2" onclick="display.value=display.value.toString().slice(0,-1)">⌫</button>
+                <button class="d2" onclick='func1(display.value,"/")'>÷</button>
+                <button class="d2" onclick='func1(display.value,"*")'>×</button>
+                <button class="d2" onclick='func1(display.value,"-")'>-</button>
+                <button class="d2" onclick='func1(display.value,"+")'>+</button>
+                <button class="d2" onclick="display.value=eval(display.value)">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function func(x,z){
+            x.toString();
+            g1=x.indexOf('+');
+            g2=x.indexOf('-');
+            g3=x.indexOf('*');
+            g4=x.indexOf('/');
+            g5=x.indexOf('%');
+            if(g1==-1 & g2==-1 & g3==-1 & g4==-1 &g5==-1){
+                if(z==1){
+                    display.value=x*x;
+                }
+                else{
+                    display.value=Math.sqrt(x);
+                }
+            }
+            else{
+                great=g1;
+                if(g2>great){
+                    great=g2;
+                }
+                if(g3>great){
+                    great=g3;
+                }
+                if(g4>great){
+                    great=g4;
+                }
+                if(g5>great){
+                    great=g5;
+                }
+                y=x.slice(great+1,x.length)
+                for (let i = great+1; i < x.length; i++) {
+                    display.value=display.value.toString().slice(0,-1);
+                }
+                if(z==1){
+                    display.value+=y*y;
+                }
+                else{
+                    display.value+=Math.sqrt(y);
+                }
+            }
+            
+        }
+        function func1(val,x){
+            val.toString();
+            if(val[val.length-1]=="+" | val[val.length-1]=="-" | val[val.length-1]=="*" | val[val.length-1]=="/" | val[val.length-1]=="%"){
+                display.value=display.value.toString().slice(0,-1);
+                display.value+=x;
+            }
+            else{
+                display.value+=x;
+            }
+        }
+    </script>
+</body>
+</html>

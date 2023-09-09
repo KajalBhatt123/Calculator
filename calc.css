@@ -1,0 +1,136 @@
+/*SETTING THE BACKGROUND IMAGE YAYYYY*/
+body{
+    background-image: url(backalc.jpg);
+}
+
+/* main calculator */
+
+.border{
+    border:2px solid black;
+    border-radius:10px;
+    height:85vh;
+    width:60vw;
+    background-color: black;
+    margin:auto;
+}
+.display{
+    display:flex;
+    flex-direction: column;
+}
+
+/* Division between Buttons And Answer Field */
+
+.flex2{
+    display:flex;
+    height:100%;
+}
+.deco{
+    height:100px;
+    width:100%;
+    border:1px solid black;
+    background-color: grey; 
+    margin-bottom: 2px;
+    border-radius: 7px 7px 0 0;
+}
+.answer{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.answer input{
+    flex:1;
+    text-align:right;
+    font-size: 40px;
+}
+
+/* Types Of Buttons */
+
+.numbers{
+    /* height:100%; */
+    width:100%;
+    border:1px solid black;
+    background-color:beige;
+    margin-right: 2px;
+    display:flex;
+    flex-direction: column;
+}
+.operators{
+    width:25%;
+    border:1px solid black;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+/* buttons */
+
+.d1{
+    width:100%;
+    background-color: black;
+    border:1px solid beige;
+    border-radius: 15px;
+    color: cadetblue;
+    font-size: 1.5rem;
+    box-shadow: 7px 7px 7px black;
+}
+.d2{
+    height:100%;
+    width:100%;
+    background-color:black;
+    border:1px solid beige;
+    border-radius: 15px;
+    color: cadetblue;
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 7px black;
+}
+.d2:last-child{
+    background-color:chocolate;
+    border:2px solid black;
+    color:black;
+}
+.outer{
+    display: flex;
+    height: 100%;
+}
+
+/*HOVERING THESE BUTTONS YAYY*/
+.d1:hover{
+    background-color: rgb(47, 0, 0);
+    color:white;
+}
+.d2:hover{
+    background-color: rgb(47, 0, 0);
+    color:white;
+}
+/* Utility Classes  */
+
+.center{
+    text-align: center;
+    padding-bottom:2vw;
+    margin:0px;
+}
+
+.head1{
+    font-size: 3vw;
+}
+
+/* Media Queries */
+
+@media(max-width:1400px){
+    .border{
+        width:77vw;
+   }
+    .head1{
+        font-size: 4vw;
+   }
+}
+@media(max-width:815px){
+    .border{
+        width:95vw;
+   }
+    .head1{
+        font-size: 8vw;
+        padding-bottom:3vw;
+   }
+}
+
